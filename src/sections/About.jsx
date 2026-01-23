@@ -27,11 +27,17 @@ const About = () => {
             md:scale-[3] md:left-50 md:inset-y-10 lg:scale-[2.5]"
           />
           <div className="z-10">
-            <p className="headtext">Hi I'm Kasam</p>
-            <p className="subtext">
-              Over the last 4 years, I developed my frontend and backend dev
-              skills to deliver dynamic and software and web applications.
-            </p>
+          <p className="headtext">Hi, I’m Aman</p>
+<p className="subtext">
+  I am a Software Developer focused on building clean, scalable web applications
+  using React, Angular, Node.js, and modern DevOps and cloud technologies. I have
+  a strong foundation in Data Structures and Algorithms and am actively learning
+  Generative AI to build efficient, future-ready software solutions.
+</p>
+
+
+
+
           </div>
           <div
             className="absolute inset-x-0 pointer-events-none 
@@ -45,11 +51,11 @@ const About = () => {
             className="flex items-center justify-center w-full h-full"
           >
             <p className="flex items-end text-5xl text-gray-500">
-              VX CODE CRAFT
+              Aman CODE CRAFT
             </p>
             <Card
               style={{ rotate: "75deg", top: "30%", left: "20%" }}
-              text="GRASP"
+              text="Angular"
               containerRef={grid2Container}
             />
             <Card
@@ -59,32 +65,32 @@ const About = () => {
             />
             <Card
               style={{ rotate: "90deg", bottom: "30%", left: "75%" }}
-              text="Nextjs"
+              text="Node.js"
               containerRef={grid2Container}
             />
             <Card
               style={{ rotate: "-45deg", top: "55%", left: "0%" }}
-              text="Design Principles"
+              text="Agile Methodology"
               containerRef={grid2Container}
             />
             <Card
               style={{ rotate: "20deg", top: "10%", left: "38%" }}
-              text="SRP"
+              text="DevOps"
               containerRef={grid2Container}
             />
             <Card
               style={{ rotate: "30deg", top: "70%", left: "70%" }}
-              image="assets/logos/csharp-pink.png"
+              image="assets/logos/java.png"
               containerRef={grid2Container}
             />
             <Card
               style={{ rotate: "-45deg", top: "70%", left: "25%" }}
-              image="assets/logos/dotnet-pink.png"
+              image="assets/logos/mysql.png"
               containerRef={grid2Container}
             />
             <Card
               style={{ rotate: "-45deg", top: "5%", left: "10%" }}
-              image="assets/logos/blazor-pink.png"
+              image="assets/logos/linux.png"
               containerRef={grid2Container}
             />
           </div>
@@ -94,7 +100,8 @@ const About = () => {
           <div className="z-10 w-[50%]">
             <p className="headtext">Time Zone</p>
             <p className="subtext">
-              I am currently based in the UK, and open to work
+              I am currently based in Gujrat (Ahmedabad), and open to work
+              remotely or on-site.
             </p>
           </div>
           <figure className="absolute left-[30%] top-[10%]">
@@ -115,9 +122,13 @@ const About = () => {
           <div className="z-1 w-[50%]">
             <p className="headtext">Tech Stack</p>
             <p className="subtext">
-              I specialize in a variety of languages, frameworks, and tools that
-              allow me to build robust and scalable applications
-            </p>
+  I specialize in a wide range of programming languages, frameworks, and tools
+  that enable me to design and develop robust, scalable, and high-performance
+  applications. My approach emphasizes clean architecture, maintainable code,
+  and solutions that effectively support both business objectives and user
+  needs.
+</p>
+
           </div>
 
           <div

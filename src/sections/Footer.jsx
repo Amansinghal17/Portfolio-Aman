@@ -16,7 +16,7 @@ const Footer = () => {
           </a>
         ))}
 
-        <p>© 2025 Kasam Ali Aftab. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} Aman Singhal. All rights reserved.</p>
       </div>
     </section>
   );

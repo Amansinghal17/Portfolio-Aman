@@ -37,22 +37,7 @@ const Contact = () => {
     try {
       const form = new FormData(e.target);
       form.append("access_key", WEB3FORMS_ACCESS_KEY);
-      form.append("subject", `New Contact Form Submission from ${formData.name}`);
-      
-      // Format the message to include all user details
-      const formattedMessage = `
-Name: ${formData.name}
-Email: ${formData.email}
-
-Message:
-${formData.message}
-      `.trim();
-      
-      // Update the message field with formatted content
-      form.set("message", formattedMessage);
-      
-      // Add from_name for better email formatting
-      form.append("from_name", formData.name);
+      form.append("subject", `New contact from ${formData.name}`);
 
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
@@ -63,13 +48,13 @@ ${formData.message}
 
       if (result.success) {
         setFormData({ name: "", email: "", message: "" });
-        showAlertMessage("success", "Your message has been sent successfully!");
+        showAlertMessage("success", "Your message has been sent!");
       } else {
         throw new Error(result.message || "Something went wrong");
       }
     } catch (error) {
       console.error(error);
-      showAlertMessage("danger", "Something went wrong! Please try again.");
+      showAlertMessage("danger", "Something went wrong!");
     } finally {
       setIsLoading(false);
     }
@@ -93,7 +78,7 @@ ${formData.message}
           <h2 className="text-heading"> Let's Connect </h2>
           <p className="font-normal text-neutral-400">
             Whether You're Looking to build a new Software Solution, or a Existing
-            Platform, or to bring a project to life, I'm here to help...
+            Platform, or to bring a project to life, I'm here to help.
           </p>
         </div>
         <form className="w-full" onSubmit={handleSubmit}>

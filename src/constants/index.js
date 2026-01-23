@@ -208,17 +208,17 @@ export const myProjects = [
 export const mySocials = [
   {
     name: "Github",
-    href: "https://github.com/VERIDIITE",
+    href: "https://github.com/AmanSinghalgithub",
     icon: "/assets/logos/github.png",
   },
   {
     name: "Linkedin",
-    href: "https://www.linkedin.com/in/kasam-software-engineer/",
+    href: "https://www.linkedin.com/in/aman-singhal-7b0643214/",
     icon: "/assets/socials/linkedIn.svg",
   },
   {
     name: "Instagram",
-    href: "https://www.instagram.com/veridiite.wav/",
+    href: "https://www.instagram.com/aman.singhalll/",
     icon: "/assets/socials/instagram.svg",
   },
 ];
@@ -227,14 +227,16 @@ export const mySocials = [
 
 export const experiences = [
   {
-    title: "Software Engineer (Internship)",
-    job: "Lunim / Tabb",
-    date: "2024-2025",
+    title: "Software Developer",
+    job: "Probus Insurance",
+    date: "2024-Present",
     contents: [
-      "Contributed to the migration of legacy Ruby on Rails systems into a modern TypeScript-based architecture using Next.js and NestJS.",
-      "Developed modular, scalable frontend and backend components — integrating Prisma ORM for type-safe database management with PostgreSQL.",
-      "Enhanced CI/CD pipelines and deployment automation through Heroku, ensuring smooth delivery and environment consistency.",
-      "Collaborated cross-functionally to document and present the new architecture (Tabb project) — improving team understanding and future scalability.",
+      "Led the Angular development team in building the Probus Insurance Dashboard, a scalable multi-role platform supporting POSP, Admin, and multiple management hierarchies.",
+      "Designed and implemented role-based access control (RBAC) with granular permissions to support complex organizational structures.",
+      "Collaborated with cross-functional teams to architect responsive, dynamic, and scalable UI components, ensuring modern UX/UI standards and optimal user experience.",
+      "Integrated and optimized RESTful APIs using Angular services, improving application performance, scalability, and data reliability.",
+      "Architected and developed an end-to-end Motor Insurance Purchase Flow, ensuring modularity, maintainability, and seamless frontend-backend integration.",
+      "Managed the complete development lifecycle including sprint planning, CI/CD practices, code reviews, and technical mentorship, while contributing to backend APIs using Node.js and Express.js.",
     ],
   },
   {
