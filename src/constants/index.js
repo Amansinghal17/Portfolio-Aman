@@ -239,24 +239,24 @@ export const experiences = [
       "Managed the complete development lifecycle including sprint planning, CI/CD practices, code reviews, and technical mentorship, while contributing to backend APIs using Node.js and Express.js.",
     ],
   },
-  {
-    title: "Back-of-House Trainer",
-    job: "Popeyes Louisiana Kitchen",
-    date: "2022-2024",
-    contents: [
-      "Maintained rigorous food quality and safety protocols, consistently meeting or exceeding company standards.",
-      "Proactively trained and mentored new team members on proper kitchen procedures and equipment operation.",
-      "Implemented efficient inventory management systems, reducing waste by 15% and ensuring optimal stock levels.",
-      "Contributed to positive team dynamics, resulting in improved operational efficiency and enhanced customer satisfaction.",
-    ],
-  },
-  {
-    title: "Freelance Developer",
-    job: "Self-Employed",
-    date: "2025-Present",
-    contents: [
-      "Created a personal portfolio using Three.js, React, Vite, and WebAPI to showcase technical expertise.",
-      "Continuously enhancing technical skills and expanding expertise in modern web development and back-end technologies.",
-    ],
-  },
+  // {
+  //   title: "Back-of-House Trainer",
+  //   job: "Popeyes Louisiana Kitchen",
+  //   date: "2022-2024",
+  //   contents: [
+  //     "Maintained rigorous food quality and safety protocols, consistently meeting or exceeding company standards.",
+  //     "Proactively trained and mentored new team members on proper kitchen procedures and equipment operation.",
+  //     "Implemented efficient inventory management systems, reducing waste by 15% and ensuring optimal stock levels.",
+  //     "Contributed to positive team dynamics, resulting in improved operational efficiency and enhanced customer satisfaction.",
+  //   ],
+  // },
+  // {
+  //   title: "Freelance Developer",
+  //   job: "Self-Employed",
+  //   date: "2025-Present",
+  //   contents: [
+  //     "Created a personal portfolio using Three.js, React, Vite, and WebAPI to showcase technical expertise.",
+  //     "Continuously enhancing technical skills and expanding expertise in modern web development and back-end technologies.",
+  //   ],
+  // },
 ];
