@@ -2,7 +2,7 @@
 
 A visually immersive **3D animated personal portfolio** website with a galaxy space theme, built using **React**, **Next.js**, **Framer Motion**, and **Tailwind CSS**. Designed to showcase projects, skills, and experiences in a futuristic and interactive style.
 
-![Aman's Space Portfolio](/Port1.png)
+![Aman's Space Portfolio](/image.png)
 
 ## 🌌 Features
 
