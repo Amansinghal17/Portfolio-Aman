@@ -2,7 +2,7 @@
 
 A visually immersive **3D animated personal portfolio** website with a galaxy space theme, built using **React**, **Next.js**, **Framer Motion**, and **Tailwind CSS**. Designed to showcase projects, skills, and experiences in a futuristic and interactive style.
 
-![Kasam's Space Portfolio](/Port1.png)
+![Aman's Space Portfolio](/Port1.png)
 
 ## 🌌 Features
 
@@ -25,7 +25,7 @@ A visually immersive **3D animated personal portfolio** website with a galaxy sp
 ## 📁 Project Structure
 
 ```
-kasams-space-portfolio/
+Aman-space-portfolio/
 ├── public/              # Static files
 │   ├── Assets/          # Assets
 │       ├── Logos   # Image Assets
@@ -55,7 +55,7 @@ kasams-space-portfolio/
 ## 🚧 Installation
 
 ```bash
-git clone (https://github.com/VERIDIITE/Personal-Portfolio.git)
+git clone (https://github.com/Amansinghal17/Portfolio-Aman.git)
 cd Personal-Portfolio
 npm install
 npm run dev
