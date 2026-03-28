@@ -20,38 +20,38 @@ const Project = () => {
     once: true,
   });
 
-  return (
-    <section
-      onClick={handleMouseMove}
-      className="relative c-space section-spacing"
-      id="projects"
-    >
-      <h2 className="text-heading">My Selected Projects</h2>
-      <div
-        ref={sectionRef}
-        className={`bg-gradient-to-r from-transparent via-neutral-700 to-transparent mt-12 h-[1px] w-full scroll-reveal-fade ${
-          isVisible ? "visible" : ""
-        }`}
-      />
-      {myProjects.map((project, index) => (
-        <Projects
-          key={project.id}
-          {...project}
-          setPreview={setPreview}
-          index={index}
-        />
-      ))}
-      {preview && (
-        <motion.img
-          className="fixed top-0 left-0 z-50 object-cover 
-      h-56 rounded-lg shadow-lg 
-      pointer-events-auto w-80"
-          src={preview}
-          style={{ x: springX, y: springY }}
-        />
-      )}
-    </section>
-  );
+  // return (
+  //   <section
+  //     onClick={handleMouseMove}
+  //     className="relative c-space section-spacing"
+  //     id="projects"
+  //   >
+  //     <h2 className="text-heading">My Selected Projects</h2>
+  //     <div
+  //       ref={sectionRef}
+  //       className={`bg-gradient-to-r from-transparent via-neutral-700 to-transparent mt-12 h-[1px] w-full scroll-reveal-fade ${
+  //         isVisible ? "visible" : ""
+  //       }`}
+  //     />
+  //     {myProjects.map((project, index) => (
+  //       <Projects
+  //         key={project.id}
+  //         {...project}
+  //         setPreview={setPreview}
+  //         index={index}
+  //       />
+  //     ))}
+  //     {preview && (
+  //       <motion.img
+  //         className="fixed top-0 left-0 z-50 object-cover 
+  //     h-56 rounded-lg shadow-lg 
+  //     pointer-events-auto w-80"
+  //         src={preview}
+  //         style={{ x: springX, y: springY }}
+  //       />
+  //     )}
+  //   </section>
+  // );
 };
 
 export default Project;

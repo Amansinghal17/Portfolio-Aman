@@ -3,7 +3,7 @@ import Alert from "../components/Alert";
 import { Particles } from "../components/Particles";
 import { useScrollReveal } from "../hooks/useScrollReveal";
 
-const WEB3FORMS_ACCESS_KEY = "b858e62d-4977-4c34-80b2-3955129ea0e5";
+const WEB3FORMS_ACCESS_KEY = "b4d470a0-cf51-4cda-9fd0-853d9c2a07f7";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -38,23 +38,29 @@ const Contact = () => {
       const form = new FormData(e.target);
       form.append("access_key", WEB3FORMS_ACCESS_KEY);
       form.append("subject", `New contact from ${formData.name}`);
+      form.append("reply_to", formData.email);
+      form.append("from_name", formData.name);
 
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
+        headers: {
+          Accept: "application/json",
+        },
         body: form,
       });
 
       const result = await response.json();
 
-      if (result.success) {
-        setFormData({ name: "", email: "", message: "" });
-        showAlertMessage("success", "Your message has been sent!");
-      } else {
-        throw new Error(result.message || "Something went wrong");
+      if (!response.ok || !result.success) {
+        console.error("Web3Forms error:", result);
+        throw new Error(result.message || "Failed to send the message.");
       }
+
+      setFormData({ name: "", email: "", message: "" });
+      showAlertMessage("success", "Your message has been sent!");
     } catch (error) {
-      console.error(error);
-      showAlertMessage("danger", "Something went wrong!");
+      console.error("Contact form submit error:", error);
+      showAlertMessage("danger", error.message || "Something went wrong!");
     } finally {
       setIsLoading(false);
     }
@@ -100,7 +106,7 @@ const Contact = () => {
           </div>
 
           <div className="mb-5">
-            <label htmlFor="name" className="field-label">
+            <label htmlFor="email" className="field-label">
               Email
             </label>
             <input
@@ -108,8 +114,8 @@ const Contact = () => {
               name="email"
               type="email"
               className="field-input field-input-focus"
-                placeholder="Enter your email"
-              autoComplete="name"
+              placeholder="Enter your email"
+              autoComplete="email"
               value={formData.email}
               onChange={handleChange}
               required
@@ -117,17 +123,16 @@ const Contact = () => {
           </div>
 
           <div className="mb-5">
-            <label htmlFor="name" className="field-label">
+            <label htmlFor="message" className="field-label">
               Message
             </label>
             <textarea
               id="message"
               name="message"
-              type="message"
               rows={4}
               className="field-input field-input-focus"
               placeholder="Share your thoughts or project details"
-              autoComplete="name"
+              autoComplete="off"
               value={formData.message}
               onChange={handleChange}
               required
@@ -135,9 +140,10 @@ const Contact = () => {
           </div>
           <button
             type="submit"
-            className="w-full px-1 py-3 text-center rounded-md cursor-pointer bg-radial from-lavender hover-animation"
+            disabled={isLoading}
+            className="w-full px-1 py-3 text-center rounded-md cursor-pointer bg-radial from-lavender hover-animation disabled:cursor-not-allowed disabled:opacity-70"
           >
-            {!isLoading ? "send" : "Sending..."}
+            {!isLoading ? "Send" : "Sending..."}
           </button>
         </form>
       </div>
