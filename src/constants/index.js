@@ -1,3 +1,8 @@
+// Helper function to get asset path with correct base URL
+const getAssetPath = (path) => {
+  return `${import.meta.env.BASE_URL}${path}`;
+};
+
 // PROJECTS
 export const myProjects = [
   // {
@@ -209,17 +214,17 @@ export const mySocials = [
   {
     name: "Github",
     href: "https://github.com/AmanSinghalgithub",
-    icon: "/assets/logos/github.png",
+    icon: getAssetPath("assets/logos/github.png"),
   },
   {
     name: "Linkedin",
     href: "https://www.linkedin.com/in/aman-singhal-7b0643214/",
-    icon: "/assets/socials/linkedIn.svg",
+    icon: getAssetPath("assets/socials/linkedIn.svg"),
   },
   {
     name: "Instagram",
     href: "https://www.instagram.com/aman.singhalll/",
-    icon: "/assets/socials/instagram.svg",
+    icon: getAssetPath("assets/socials/instagram.svg"),
   },
 ];
 

@@ -1,5 +1,7 @@
 import { motion, useScroll, useSpring, useTransform } from "motion/react";
+
 const ParrallaxBackground = () => {
+  const baseUrl = import.meta.env.BASE_URL;
   const { scrollYProgress } = useScroll();
   const x = useSpring(scrollYProgress, {
     damping: 50,
@@ -16,7 +18,7 @@ const ParrallaxBackground = () => {
         <motion.div
           className="absolute inset-0 w-full h-screen -z-50"
           style={{
-            backgroundImage: "url(/assets/sky.jpg)",
+            backgroundImage: `url(${baseUrl}assets/sky.jpg)`,
             backgroundPosition: "bottom",
             backgroundSize: "cover",
           }}
@@ -25,7 +27,7 @@ const ParrallaxBackground = () => {
         <motion.div
           className="absolute inset-0 -z-40"
           style={{
-            backgroundImage: "url(/assets/mountain-3.png)",
+            backgroundImage: `url(${baseUrl}assets/mountain-3.png)`,
             backgroundPosition: "bottom",
             backgroundSize: "cover",
             y: montain3Y,
@@ -35,7 +37,7 @@ const ParrallaxBackground = () => {
         <motion.div
           className="absolute inset-0 -z-30"
           style={{
-            backgroundImage: "url(/assets/planets.png)",
+            backgroundImage: `url(${baseUrl}assets/planets.png)`,
             backgroundPosition: "bottom",
             backgroundSize: "cover",
             x: planetsX,
@@ -45,7 +47,7 @@ const ParrallaxBackground = () => {
         <motion.div
           className="absolute inset-0 -z-20"
           style={{
-            backgroundImage: "url(/assets/mountain-2.png)",
+            backgroundImage: `url(${baseUrl}assets/mountain-2.png)`,
             backgroundPosition: "bottom",
             backgroundSize: "cover",
             y: montain2Y,
@@ -55,7 +57,7 @@ const ParrallaxBackground = () => {
         <motion.div
           className="absolute inset-0 -z-10"
           style={{
-            backgroundImage: "url(/assets/mountain-1.png)",
+            backgroundImage: `url(${baseUrl}assets/mountain-1.png)`,
             backgroundPosition: "bottom",
             backgroundSize: "cover",
             y: montain1Y,
