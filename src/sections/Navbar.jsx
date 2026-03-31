@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "motion/react";
+import ResumeDownload from "../components/ResumeDownload";
 function Navigation() {
   return (
     <ul className="nav-ul">
@@ -22,6 +23,9 @@ function Navigation() {
         <a className="nav-link" href="#contact">
           Contact
         </a>
+      </li>
+      <li className="nav-li">
+        <ResumeDownload variant="icon" className="text-sm px-4 py-1.5" />
       </li>
     </ul>
   );

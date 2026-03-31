@@ -1,6 +1,7 @@
 import React from "react";
 import { FlipWords } from "./FlipWords";
 import { motion } from "motion/react";
+import ResumeDownload from "./ResumeDownload";
 
 const HeroText = () => {
   const words = ["Efficient", "Scalable", "User-Focused"];
@@ -50,6 +51,16 @@ const HeroText = () => {
           <motion.p className="text-4xl font-medium text-neutral-300">
             Digital Products & Experiences
           </motion.p>
+
+          <motion.div
+            variants={variants}
+            initial="hidden"
+            animate="visible"
+            transition={{ delay: 1.8 }}
+            className="mt-8"
+          >
+            
+          </motion.div>
         </div>
       </div>
 
@@ -84,6 +95,15 @@ const HeroText = () => {
           <motion.p className="text-4xl font-black text-neutral-300">
             Web & Software Solutions
           </motion.p>
+        </motion.div>
+
+        <motion.div
+          variants={variants}
+          initial="hidden"
+          animate="visible"
+          transition={{ delay: 2.1 }}
+        >
+        
         </motion.div>
       </div>
     </div>
