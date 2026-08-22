@@ -30,6 +30,9 @@ const Hero = () => {
           </Suspense>
         </Canvas>
       </figure>
+      <a href="#about" className="scroll-indicator" aria-label="Scroll to About">
+        <span className="scroll-indicator-dot" />
+      </a>
     </section>
   );
 };

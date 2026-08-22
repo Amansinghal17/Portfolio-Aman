@@ -1,5 +1,5 @@
-import React from "react";
-import { motion } from "motion/react";
+import React, { useRef } from "react";
+import { motion, useMotionValue, useSpring } from "motion/react";
 
 const ResumeDownload = ({ variant = "button", className = "" }) => {
   const handleDownload = () => {
@@ -13,6 +13,25 @@ const ResumeDownload = ({ variant = "button", className = "" }) => {
     document.body.removeChild(link);
   };
 
+  // Magnetic pull: the button leans slightly toward the cursor on hover.
+  const btnRef = useRef(null);
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  const springX = useSpring(x, { stiffness: 150, damping: 12 });
+  const springY = useSpring(y, { stiffness: 150, damping: 12 });
+
+  const handleMagneticMove = (e) => {
+    const rect = btnRef.current.getBoundingClientRect();
+    const relX = e.clientX - (rect.left + rect.width / 2);
+    const relY = e.clientY - (rect.top + rect.height / 2);
+    x.set(relX * 0.35);
+    y.set(relY * 0.35);
+  };
+
+  const handleMagneticLeave = () => {
+    x.set(0);
+    y.set(0);
+  };
 
   if (variant === "icon") {
     return (
@@ -43,8 +62,12 @@ const ResumeDownload = ({ variant = "button", className = "" }) => {
 
   return (
     <motion.button
+      ref={btnRef}
       onClick={handleDownload}
-      className={`px-6 py-3 text-center rounded-md cursor-pointer bg-gradient-to-r from-lavender to-purple-600 hover-animation text-white font-medium transition-all ${className}`}
+      onMouseMove={handleMagneticMove}
+      onMouseLeave={handleMagneticLeave}
+      style={{ x: springX, y: springY }}
+      className={`px-6 py-3 text-center rounded-md cursor-pointer bg-gradient-to-r from-lavender to-purple-600 hover-animation text-white font-medium transition-colors ${className}`}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
     >

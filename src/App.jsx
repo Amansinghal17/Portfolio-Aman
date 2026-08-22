@@ -6,17 +6,25 @@ import Projects from "./sections/Project";
 import Experience from "./sections/Experience";
 import Contact from "./sections/Contact";
 import Footer from "./sections/Footer";
+import CustomCursor from "./components/CustomCursor";
+import ScrollProgress from "./components/ScrollProgress";
+import SiteBackground from "./components/SiteBackground";
 
 const App = () => {
   return (
-    <div className="container mx-auto max-w-7xl">
-      <Navbar />
-      <Hero />
-      <About />
-      <Projects />
-      <Experience />
-      <Contact />
-      <Footer />
+    <div className="relative md:cursor-none">
+      <SiteBackground />
+      <CustomCursor />
+      <ScrollProgress />
+      <div className="container relative z-10 mx-auto max-w-7xl">
+        <Navbar />
+        <Hero />
+        <About />
+        <Projects />
+        <Experience />
+        <Contact />
+        <Footer />
+      </div>
     </div>
   );
 };

@@ -5,6 +5,21 @@ import CopyEmailButton from "../components/CopyEmailButton";
 import { Frameworks } from "../components/Frameworks";
 import { useScrollReveal } from "../hooks/useScrollReveal";
 
+const handleSpotlight = (e) => {
+  const rect = e.currentTarget.getBoundingClientRect();
+  const px = (e.clientX - rect.left) / rect.width;
+  const py = (e.clientY - rect.top) / rect.height;
+  e.currentTarget.style.setProperty("--mx", `${px * 100}%`);
+  e.currentTarget.style.setProperty("--my", `${py * 100}%`);
+  const rx = (0.5 - py) * 4;
+  const ry = (px - 0.5) * 4;
+  e.currentTarget.style.transform = `perspective(1000px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+};
+
+const resetTilt = (e) => {
+  e.currentTarget.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg)";
+};
+
 const About = () => {
   const grid2Container = useRef();
   const [sectionRef, isVisible] = useScrollReveal({ threshold: 0.1, once: true });
@@ -18,8 +33,10 @@ const About = () => {
       >
         {/* Grid 1 */}
         <div
+          onMouseMove={handleSpotlight}
+          onMouseLeave={resetTilt}
           className="flex items-end 
-        grid-default-color grid-1"
+        grid-default-color grid-1 spotlight tilt-card"
         >
           <img
             src="assets/coding-pov.png"
@@ -45,7 +62,7 @@ const About = () => {
           />
         </div>
         {/* Grid 2 */}
-        <div className="grid-default-color grid-2">
+        <div onMouseMove={handleSpotlight} onMouseLeave={resetTilt} className="grid-default-color grid-2 spotlight tilt-card">
           <div
             ref={grid2Container}
             className="flex items-center justify-center w-full h-full"
@@ -96,7 +113,7 @@ const About = () => {
           </div>
         </div>
         {/* Grid 3 */}
-        <div className="grid-black-color grid-3">
+        <div onMouseMove={handleSpotlight} onMouseLeave={resetTilt} className="grid-black-color grid-3 spotlight tilt-card">
           <div className="z-10 w-[50%]">
             <p className="headtext">Time Zone</p>
             <p className="subtext">
@@ -109,7 +126,7 @@ const About = () => {
           </figure>
         </div>
         {/* Grid 4 */}
-        <div className="grid-special-color grid-4">
+        <div onMouseMove={handleSpotlight} onMouseLeave={resetTilt} className="grid-special-color grid-4 spotlight tilt-card">
           <div className="flex flex-col items-center justify-center gap-5 size-full">
             <p className="text-center headtext">
               Do You want to Start a Project Together?
@@ -118,7 +135,7 @@ const About = () => {
           </div>
         </div>
         {/* Grid 5 */}
-        <div className="grid-default-color grid-5">
+        <div onMouseMove={handleSpotlight} onMouseLeave={resetTilt} className="grid-default-color grid-5 spotlight tilt-card">
           <div className="z-1 w-[50%]">
             <p className="headtext">Tech Stack</p>
             <p className="subtext">
